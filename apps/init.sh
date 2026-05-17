@@ -10,7 +10,7 @@ docker-compose up --build -d
 echo "Waiting for services to be ready..."
 # Wait for PostgreSQL to be ready
 for i in {1..30}; do
-  if docker exec smarthome-postgres pg_isready -U postgres > /dev/null 2>&1; then
+  if docker exec postgres pg_isready -U postgres > /dev/null 2>&1; then
     echo "PostgreSQL is ready!"
     break
   fi
